@@ -1,0 +1,31 @@
+
+# version format
+version: 0.1.5.{build}
+
+# build platform, i.e. x86, x64, Any CPU. This setting is optional.
+platform: x86
+
+# to add several platforms to build matrix:
+#platform:
+#  - x86
+#  - Any CPU
+
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+
+before_build:
+nuget restore sdk\solutions\WinSDK4Desktop\WinSDK4Desktop.sln
+
+build:
+ # parallel: true                  # enable MSBuild parallel builds
+  project: sdk\solutions\WinSDK4Desktop\WinSDK4Desktop.sln      # path to Visual Studio solution or project
+  
+test:
+ categories:
+   except:
+     sdk
+ deploy:
+  - provider: GitHub
+    on:
+      branch: master                # release from master branch only
+     
