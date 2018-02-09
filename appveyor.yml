@@ -24,7 +24,7 @@ test:
  categories:
    except:
     - sdk
- deploy:
+deploy:
   - provider: GitHub
     on:
       branch: master                # release from master branch only
