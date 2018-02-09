@@ -23,7 +23,7 @@ before_build:
 test:
  categories:
    except:
-     sdk
+    - sdk
  deploy:
   - provider: GitHub
     on:
