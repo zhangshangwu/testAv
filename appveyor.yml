@@ -21,9 +21,9 @@ before_build:
   - ps: nuget restore sdk\solutions\WinSDK4Desktop\WinSDK4Desktop.sln
   
 test:
- categories:
+   assemblies::
    except:
-    - sdk
+    - SparkSDKTests.dll
 deploy:
   - provider: GitHub
     on:
