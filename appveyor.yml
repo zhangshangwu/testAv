@@ -18,7 +18,7 @@ build:
   project: sdk\solutions\WinSDK4Desktop\WinSDK4Desktop.sln      # path to Visual Studio solution or project
 
 before_build:
-  - ps: nuget sdk\solutions\WinSDK4Desktop\WinSDK4Desktop.sln
+  - ps: restore nuget sdk\solutions\WinSDK4Desktop\WinSDK4Desktop.sln
   
 test:
  categories:
