@@ -14,7 +14,7 @@ platform: x86
 configuration: Release
 
 build:
- # parallel: true                  # enable MSBuild parallel builds
+  parallel: true                  # enable MSBuild parallel builds
   project: sdk\solutions\WinSDK4Desktop\WinSDK4Desktop.sln      # path to Visual Studio solution or project
 
 before_build:
@@ -24,10 +24,10 @@ test:
    assemblies:
     except:
      - SparkSDKTests.dll
-deploy:
-  - provider: GitHub
-    on:
-      branch: master                # release from master branch only
+# deploy:
+  # - provider: GitHub
+    # on:
+      # branch: master                # release from master branch only
 notifications:
 # Email
   - provider: Email
