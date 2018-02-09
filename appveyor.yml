@@ -13,12 +13,12 @@ platform: x86
 # build Configuration, i.e. Debug, Release, etc.
 configuration: Release
 
-before_build:
-nuget restore sdk\solutions\WinSDK4Desktop\WinSDK4Desktop.sln
-
 build:
  # parallel: true                  # enable MSBuild parallel builds
   project: sdk\solutions\WinSDK4Desktop\WinSDK4Desktop.sln      # path to Visual Studio solution or project
+
+before_build:
+  - ps: nuget sdk\solutions\WinSDK4Desktop\WinSDK4Desktop.sln
   
 test:
  categories:
